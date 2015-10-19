@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8AD7968-72EE-425C-8684-6E76731D8E26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Illallangi.WhatCD</RootNamespace>
+    <AssemblyName>Illallangi.WhatCD</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\ArtistExtensions.cs" />
+    <Compile Include="Client\AuthExtensions.cs" />
+    <Compile Include="Client\GroupExtensions.cs" />
+    <Compile Include="Json\EncodingConverter.cs" />
+    <Compile Include="Json\HtmlEntityConverter.cs" />
+    <Compile Include="Json\MusicInfoConverter.cs" />
+    <Compile Include="Model\ObjectWithId.cs" />
+    <Compile Include="Client\SessionExtensions.cs" />
+    <Compile Include="Model\Artists\ArtistGenreCollection.cs" />
+    <Compile Include="Model\Artists\Artist.cs" />
+    <Compile Include="Client\TorrentExtensions.cs" />
+    <Compile Include="Model\Artists\ArtistObject.cs" />
+    <Compile Include="Model\Artists\Request.cs" />
+    <Compile Include="Model\Artists\SimilarArtist.cs" />
+    <Compile Include="Model\Artists\Statistics.cs" />
+    <Compile Include="Model\Artists\Tag.cs" />
+    <Compile Include="Model\Artists\Torrent.cs" />
+    <Compile Include="Model\Artists\Torrentgroup.cs" />
+    <Compile Include="Model\Artists\TorrentResponseTitleCollection.cs" />
+    <Compile Include="Graveyard\ReleaseReleaseTypeCollection.cs" />
+    <Compile Include="Model\Groups\Group.cs" />
+    <Compile Include="Graveyard\LazyArtist.cs" />
+    <Compile Include="Graveyard\MusicInfo.cs" />
+    <Compile Include="Model\Groups\ReleaseType.cs" />
+    <Compile Include="Model\Torrents\Torrent.cs" />
+    <Compile Include="RegistryExtensions.cs" />
+    <Compile Include="Model\Profiles\Profile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Illallangi.JsonClient\Illallangi.JsonClient.csproj">
+      <Project>{FA7DC7CE-A2DD-4E88-BE0F-3F1CFF0483DF}</Project>
+      <Name>Illallangi.JsonClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
